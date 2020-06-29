@@ -35,6 +35,15 @@ namespace StrategyPattern.Controllers
         }
 
         // POST api/values
+        // POST api/values
+        /// <summary>
+        /// request body example :  {
+        ///                            "paymentmode":3
+        ///                         }
+        ///                         paymentmode => 1: Creditcard 2.UPI 3. PayPal
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public string Post([FromBody]PaymentRequest request)
         {
             bool success = Enum.IsDefined(typeof(StrategyType), request.PaymentMode);
